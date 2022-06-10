@@ -1,15 +1,13 @@
 // Mongoos and Moment
-const { Schema, Model, DataTypes } = require('mongoose');
-const moment = require('moment');
+const { Schema, model, DataTypes } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 //Reaction Schema
 const ReactionSchema = new Schema(
     {
         reactionId: {
-            tpye: Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
-            required: true,
-            maxlength: 280,
         },
         reactionBody: {
             type: String,
@@ -23,7 +21,7 @@ const ReactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (createdAtVal) => moment(createdAtVal),
+            get: (createdAtVal) => dateFormat(createdAtVal),
         },
     },
     {
@@ -37,23 +35,24 @@ const ReactionSchema = new Schema(
 const ThoughtsSchema = new Schema(
     {
         thoughtText: {
-            tpye: String,
+            type: String,
             required: true,
             maxlength: 280,
         },
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (createdAtVal) = moment(createdAtVal)
+            get: (createdAtVal) => dateFormat(createdAtVal),
         },
         username: {
             type: String,
             required: true,
         },
-        reactions: [reactionSchema],
+        reactions: [ReactionSchema],
     },
-    {toJSON: {
-        virtuals: true,
+    {
+        toJSON: {
+    
         getters: true,
     },
     id: false,

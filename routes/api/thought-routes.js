@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const {
     getAllThoughts,
-    getThoughtsById,
+    getThoughtById,
     createThought,
     updateThought,
     deleteThought,
@@ -23,6 +23,6 @@ router
   .delete(deleteThought);
 
   // Set up POST and DELETE for Friends
-route.route('/:id/thoughtId/:reactions').post(addReactions).delete(deleteReaction);
+router.route('/:id/thoughtId/:reactions').post(addReaction).delete(deleteReaction);
 
 module.exports = router;
