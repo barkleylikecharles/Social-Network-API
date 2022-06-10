@@ -22,7 +22,7 @@ const userController = {
     getUserById({ params }, res) {
         Users.findOne({ _id: params.id })
             .populate({
-                path: 'comments',
+                path: 'thoughts',
                 select: '-__v'
             })
             .select('-__v')
@@ -40,7 +40,7 @@ const userController = {
     },
     // create User
     createUser({ body }, res) {
-        Pizza.create(body)
+        Users.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
     },
@@ -61,14 +61,16 @@ const userController = {
         Users.findOneAndDelete({ _id: params.id })
             .then(dbUserData => {
                 if (!dbUserData) {
-                    res.status(404).json({ message: 'No pizza user with this id!' });
+                    res.status(404).json({ message: 'No user with this id!' });
                     return;
                 }
                 res.json(dbUserData);
             })
             .catch(err => res.status(400).json(err));
     },
-    addFriend({ params }, res)
+    // addFriend({ params }, res) {
+
+    // }
 }
 
 
