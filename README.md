@@ -3,8 +3,7 @@
 ## Badges
 ![NPM](https://img.shields.io/badge/npm-CB3837?style=plastic&logo=npm&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node-6DA55F?style=plastic&logo=node.js&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=plastic&logo=mysql&logoColor=white)
-![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7.svg?style=plastic&logo=Sequelize&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-52B0E7.svg?style=plastic&logo=Sequelize&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=plastic&logo=express&logoColor=%2361DAFB)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=plastic&logo=markdown&logoColor=white)
 
