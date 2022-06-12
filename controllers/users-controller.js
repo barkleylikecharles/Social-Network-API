@@ -44,7 +44,7 @@ const userController = {
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
     },
-    // update Userby id
+    // update User by id
     updateUser({ params, body }, res) {
         Users.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
             .then(dbUserData => {
@@ -68,9 +68,37 @@ const userController = {
             })
             .catch(err => res.status(400).json(err));
     },
-    // addFriend({ params }, res) {
-
-    // }
+    addFriend({ params }, res) {
+        Users.findOneAndUpdate({ _id: params.id }, {
+            $push:{
+                friends: params.friendId
+            }
+        }, { new: true, runValidators: true })
+            .then(dbUserData => {
+                if (!dbUserData) {
+                    res.status(404).json({ message: 'No user found with this id!' });
+                    return;
+                }
+                res.json(dbUserData);
+            })
+            .catch(err => res.status(400).json(err));
+        },
+                // delete friend
+    removeFriend({ params }, res) {
+            Users.findOneAndUpdate({ _id: params.id }, {
+                $pull:{
+                    friends: params.friendId
+                }
+            }, { new: true, runValidators: true })
+                .then(dbUserData => {
+                    if (!dbUserData) {
+                        res.status(404).json({ message: 'No user found with this id!' });
+                        return;
+                    }
+                    res.json(dbUserData);
+                })
+                .catch(err => res.status(400).json(err));
+            }
 }
 
 

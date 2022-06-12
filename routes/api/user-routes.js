@@ -6,8 +6,8 @@ const {
     createUser,
     updateUser,
     deleteUser,
-    // addFriend,
-    // removeFriend,
+    addFriend,
+    removeFriend,
   } = require('../../controllers/users-controller');
 // Set up GET all and POST at /api/pizzas
 router
@@ -23,6 +23,9 @@ router
   .delete(deleteUser);
 
   // Set up POST and DELETE for Friends
-// router.route('/:id/friends/:friendsId').post(addFriend).delete(removeFriend);
+router
+  .route('/:id/friends/:friendId')
+  .post(addFriend)
+  .delete(removeFriend);
 
 module.exports = router;
