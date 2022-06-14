@@ -1,4 +1,4 @@
-// Mongoos and Moment
+// Mongoos and DateFormat or Moment
 const { Schema, model, DataTypes } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
