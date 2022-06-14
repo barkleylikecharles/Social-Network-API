@@ -18,6 +18,8 @@ User must do a npm i to initiate all packages
 ## Usage
 npm start
 
+Watch the video tutorial here https://youtu.be/msxMFtF5q64
+
 ## Credits
 Project Completed by Nicole Barkley https://github.com/barkleylikecharles 
 
