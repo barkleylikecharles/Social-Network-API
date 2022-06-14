@@ -7,19 +7,16 @@
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=plastic&logo=express&logoColor=%2361DAFB)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=plastic&logo=markdown&logoColor=white)
 
-
-
 ## Description
-Welcome to my Social Network application.  This api enabled enables a large amount of unstructured data to be compiled in one place.  Perfect for a start-up.
+Welcome to my Social Network application.  This api enabled enables a large amount of unstructured data to be compiled in one place. Users can make comments, add reactions and connect with friends. Perfect for connectivity for a small business or start-up.
 
 ## 💻 Installation
-Clone the repo here
+Clone the repo here https://github.com/barkleylikecharles/Social-Network-API
 
 User must do a npm i to initiate all packages 
 
 ## Usage
 npm start
-
 
 ## Credits
 Project Completed by Nicole Barkley https://github.com/barkleylikecharles 
